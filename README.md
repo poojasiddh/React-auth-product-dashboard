@@ -1,5 +1,16 @@
 # React Authentication & Product Dashboard
 
+## 🚀 Live Demo
+
+🌐 https://react-auth-product-dashboard.vercel.app
+
+## 📂 GitHub Repository
+
+🔗 https://github.com/poojasiddh/react-auth-product-dashboard
+
+
+# React Authentication & Product Dashboard
+
 A modern React.js application that provides user authentication, product listing, product details, and dashboard functionality using Context API without any backend database.
 
 ---
