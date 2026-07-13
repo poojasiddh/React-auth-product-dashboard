@@ -52,3 +52,21 @@ Product data is fetched from Fake Store API using:
 ---
 
 ## Project Structure
+
+## 📸 Screenshots
+
+### Register Page
+
+![Register](screenshots/register.png)
+
+### Login Page
+
+![Login](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Product Detail
+
+![Product Detail](screenshots/product-detail.png)
