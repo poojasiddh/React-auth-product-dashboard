@@ -66,9 +66,9 @@ Product data is fetched from Fake Store API using:
 
 ## 📸 Screenshots
 
-### Register Page
+### Registration Page
 
-![Register](screenshots/register.png)
+![Registration](screenshots/Registration.png)
 
 ### Login Page
 
@@ -80,4 +80,16 @@ Product data is fetched from Fake Store API using:
 
 ### Product Detail
 
-![Product Detail](screenshots/product-detail.png)
+![Product Detail](screenshots/show_view_details.png)
+
+### Add to Cart
+
+![Add to Cart](screenshots/show_cart_details.png)
+
+### Search Functionality
+
+![Search](screenshots/search_functionality.png)
+
+### Logout
+
+![Logout](screenshots/logout_functionality.png)
