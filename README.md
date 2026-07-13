@@ -1,16 +1,54 @@
-# React + Vite
+# React Authentication & Product Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern React.js application that provides user authentication, product listing, product details, and dashboard functionality using Context API without any backend database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- User Registration with Form Validation
+- Login Authentication
+- Context API for State Management
+- Protected Dashboard
+- Product Listing using API
+- Product Details Page
+- Search Products
+- Logout Functionality
+- Responsive UI using Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React.js
+- Vite
+- JavaScript (ES6)
+- Tailwind CSS
+- React Router DOM
+- Context API
+- Axios
+- Fetch API
+
+---
+
+## Authentication Flow
+
+1. User Registration
+2. Form Validation
+3. Store User Data using Context API
+4. Login using Registered Email & Password
+5. Redirect to Dashboard
+6. Logout
+
+---
+
+## API Integration
+
+Product data is fetched from Fake Store API using:
+
+- Fetch API
+- Axios
+
+---
+
+## Project Structure
