@@ -1,5 +1,16 @@
 # React Authentication & Product Dashboard
 
+## 🚀 Live Demo
+
+🌐 https://react-auth-product-dashboard.vercel.app
+
+## 📂 GitHub Repository
+
+🔗 https://github.com/poojasiddh/react-auth-product-dashboard
+
+
+# React Authentication & Product Dashboard
+
 A modern React.js application that provides user authentication, product listing, product details, and dashboard functionality using Context API without any backend database.
 
 ---
@@ -52,3 +63,33 @@ Product data is fetched from Fake Store API using:
 ---
 
 ## Project Structure
+
+## 📸 Screenshots
+
+### Registration Page
+
+![Registration](screenshots/Registration.png)
+
+### Login Page
+
+![Login](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Product Detail
+
+![Product Detail](screenshots/show_view_details.png)
+
+### Add to Cart
+
+![Add to Cart](screenshots/show_cart_details.png)
+
+### Search Functionality
+
+![Search](screenshots/search_functionality.png)
+
+### Logout
+
+![Logout](screenshots/logout_functionality.png)
