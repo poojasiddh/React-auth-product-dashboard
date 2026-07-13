@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import jewelry from "../assets/logo1.png";
-import { BaggageClaim, ChevronDown, LogOut, Search, UserRound } from "lucide-react";
+import { BaggageClaim, ChevronDown, LogOut, Search, UserRound, ClipboardPlus } from "lucide-react";
 
 
 function Dashboard() {
@@ -75,9 +75,9 @@ function Dashboard() {
     }
     return (
         <div className="min-h-screen bg-gradient-to-r from-blue-400 to-emerald-400">
-            <header className="flex items-center justify-between bg-white shadow-md h-16 px-8 md:px-16">
+            <header className="flex items-center bg-white shadow-md h-16 px-4 md:px-4">
                 <a href="#"><img src={jewelry} alt="Jewelry Logo" className="w-36 h-auto hover:scale-105 transition-all duration-300" /></a>
-                <ul className="hidden xl:flex gap-10 font-semibold text-base flex-1 justify-center">
+                <ul className="hidden xl:flex gap-7 font-semibold text-base flex-[0.8] justify-center">
                     <li className="cursor-pointer hover:text-sky-500 transition">MEN</li>
                     <li className="cursor-pointer hover:text-sky-500 transition">WOMEN</li>
                     <li className="cursor-pointer hover:text-sky-500 transition">JEWELLERY</li>
@@ -85,10 +85,10 @@ function Dashboard() {
                 </ul>
 
 
-                <div className="relative hidden md:block pr-10 py-10">
+                <div className="relative hidden md:block pr-5 py-5">
                     <Search className="bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
                     <input type="text" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)}
-                        className="w-64 pl-10 pr-4 py-2 border-2 border-sky-400 rounded-full focus:outline-none focus:ring-2 focus:ring-sky-400" />
+                        className="w-50 pl-10 pr-4 py-2 border-2 border-sky-400 rounded-full focus:outline-none focus:ring-2 focus:ring-sky-400" />
                 </div>
                 {/* <div className="flex items-center gap-3 ml-6 cursor-pointer">
                     <div className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center">
@@ -100,8 +100,25 @@ function Dashboard() {
                     </div>
                     
                 </div> */}
+                <div className="relative ml-6">
+                    <Link to="/cart">
+                    <ClipboardPlus className="w-8 h-8 text-sky-600 cursor-pointer hover:text-sky-800"/>
+            </Link>
+                </div>
 
-                <div ref={profileRef} className="relative ml-6">
+
+                <div className="relative ml-6">
+                    <Link to="/cart">
+                        <BaggageClaim className="w-8 h-8 text-sky-600 cursor-pointer hover:text-sky-800" />
+                    </Link>
+                    {cart.length > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                            {cart.length}
+                        </span>
+                    )}
+                </div>
+
+                <div ref={profileRef} className="relative ml-auto mr-5">
                     <div
                         onClick={(e) => setProfile(!profile)}
                         className="flex items-center gap-3 cursor-pointer">
@@ -124,12 +141,6 @@ function Dashboard() {
                                 <h3 className="font-semibold text-gray-800">{loggedInUser?.name}</h3>
                                 <p className="text-sm text-gray-500">{loggedInUser?.admin_email}</p>
                             </div>
-
-                            {/* <button className="flex items-center gap-3 w-full px-4 py-3 hover:bg-gray-100 transition">
-        <Settings className="w-5 h-5 text-gray-500" />
-        <span>Settings</span>
-      </button> */}
-
                             {/* Logout */}
                             <button onClick={handleLogout}
                                 className="flex items-center gap-3 w-full px-4 py-3 text-red-500 hover:bg-red-50 transition cursor-pointer">
@@ -139,29 +150,22 @@ function Dashboard() {
                         </div>
                     )}
                 </div>
-                <div className="relative ml-6">
-                    <Link to="/cart">
-                        <BaggageClaim className="w-7 h-7 text-sky-600 cursor-pointer hover:text-sky-800" />
-                    </Link>
 
-                    {cart.length > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
-                            {cart.length}
-                        </span>
-                    )}
-                </div>
+
+
+
             </header>
 
 
             {/* cart structure */}
-           
+
             <div className="p-9">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {filteredProducts.map((item, id) => (
                         <div key={item.id} className="bg-white rounded-lg shadow-lg p-4 flex flex-col transition-all duration-300
                                        hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-                                         <Link to={`/view/${item.id}`}>
-                            <img src={item.image} alt={item.title} className="w-full h-56 object-contain transition-transform duration-300 hover:scale-105" />
+                            <Link to={`/view/${item.id}`}>
+                                <img src={item.image} alt={item.title} className="w-full h-56 object-contain transition-transform duration-300 hover:scale-105" />
                             </Link>
                             <h2 className="font-semibold mt-3 text-sm h-15 overflow-hidden">{item.title}</h2>
                             <div className="flex items-center justify-between mt-1">
