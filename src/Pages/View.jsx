@@ -23,15 +23,13 @@ function View() {
                     <p className="text-gray-500 mt-3 capitalize">{views.category}</p>
                     <p className="mt-6 leading-7">{views.description}</p>
                     <div className="mt-10 flex justify-between items-center border-t pt-6">
-                        <h2 className="text-2xl font-bold">Total: ₹ {views.price}</h2>
-                        <button className="bg-emerald-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold cursor-pointer">
-                            PLACE ORDER
-                        </button>
+                    <h2 className="text-2xl font-bold">Total: ₹ {views.price}</h2>
+                    <button className="bg-emerald-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold cursor-pointer">
+                    PLACE ORDER
+                    </button>
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }
