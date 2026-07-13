@@ -61,9 +61,7 @@ function Cart() {
             </div>
 
             <div className="mt-8 bg-white rounded-xl shadow-md p-6 flex justify-between items-center">
-                <h2 className="text-2xl font-bold">
-                    Total: ₹ {totalPrice.toFixed(2)}
-                </h2>
+                <h2 className="text-2xl font-bold">Total: ₹ {totalPrice.toFixed(2)}</h2>
 
                 <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition">
                     Proceed to Checkout

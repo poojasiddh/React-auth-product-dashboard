@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
+import { toast } from "react-toastify";
 
 
 function VendorForm() {
@@ -90,11 +91,14 @@ function VendorForm() {
       console.log("result", result);
 
       if (result) {
-        alert("Email alrady exist");
+        toast.error("Email already exists");
       } else {
         const updateData = [...userData, formData];
         setUserData(updateData);
-        alert("form submitted Successfully.")
+        toast.success("Form submitted successfully!");
+        // setTimeout(() => {
+        //   navigate("/login");
+        // }, 1500);
         navigate("/login");
       }
 
@@ -160,6 +164,40 @@ function VendorForm() {
       });
     }
   }
+  function handleReset() {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      country: '',
+      state: '',
+      city: '',
+      zipcode: '',
+      address1: '',
+      address2: '',
+      company_name: '',
+      company_email: '',
+      domain_name: '',
+      company_country: '',
+      company_state: '',
+      company_city: '',
+      company_code: '',
+      company_address1: '',
+      company_address2: '',
+      admin_email: '',
+      admin_password: '',
+      skills: [],
+      date: '',
+      color: '',
+      month: '',
+      gender: '',
+      datetime: '',
+      week: '',
+      url: '',
+    });
+
+    setFormDataErr({});
+  }
 
 
   return (
@@ -212,7 +250,7 @@ function VendorForm() {
 
           <div className="flex flex-col">
             <label className="mb-2 font-semibold">City<span className="text-red-500">*</span></label>
-            <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"  name="city" value={formData.city} onChange={handleChange} />
+            <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" name="city" value={formData.city} onChange={handleChange} />
             {formDataerr.city && (<span className="text-red-500 text-sm mt-1">{formDataerr.city}</span>)}
           </div>
 
@@ -232,8 +270,8 @@ function VendorForm() {
             <textarea type='text' className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" rows='2' name='address2' value={formData.address2} onChange={handleChange}></textarea>
             {formDataerr.address2 && (<span className="text-red-500 text-sm mt-1">{formDataerr.address2}</span>)}
           </div>
-        </div><br/><br/>
-         <h2 className="bg-gray-100 p-3 rounded-lg text-xl font-semibold mb-10">Company Information</h2>
+        </div><br /><br />
+        <h2 className="bg-gray-100 p-3 rounded-lg text-xl font-semibold mb-10">Company Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
           <div className="flex flex-col md:col-span-2">
             <label className="mb-2 font-semibold">Company Name<span className="text-red-500">*</span></label>
@@ -296,8 +334,8 @@ function VendorForm() {
             {formDataerr.company_address2 && (<span className="text-red-500 text-sm mt-1">{formDataerr.company_address2}</span>)}
           </div>
         </div>
-        <br/><br/>
- <h2 className="bg-gray-100 p-3 rounded-lg text-xl font-semibold mb-5">Admin Account</h2>
+        <br /><br />
+        <h2 className="bg-gray-100 p-3 rounded-lg text-xl font-semibold mb-5">Admin Account</h2>
         {/* <h2>Admin Account</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
           <div className="flex flex-col">
@@ -380,8 +418,8 @@ function VendorForm() {
           </div>
         </div>
         <div className="flex justify-center gap-4 mt-6">
-          <button type="button" className="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Reset</button>
-          <button type="submit" className="px-8 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition">Submit</button>
+          <button type="button" className="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition cursor-pointer" onClick={handleReset}>Reset</button>
+          <button type="submit" className="px-8 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition cursor-pointer">Submit</button>
         </div><br />
         <p className="text-center text-sm text-gray-600">I have an account? <Link to="/login" className="text-blue-600 hover:underline font-medium">Login</Link></p>
       </form>

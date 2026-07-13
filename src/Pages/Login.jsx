@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
+import { toast } from "react-toastify";
 
 
 
@@ -71,11 +72,13 @@ function LoginForm() {
         if (login) {
             localStorage.setItem("loggedInUser", JSON.stringify(login));
             setLoggedInUser(login);
-            alert("login successfully !!");
+           
+            toast.success("login successfully !!");
             // setIsUserLogin(true);
             navigate("/dashboard", { replace: true });
         } else {
-            alert("Invalid email and password");
+          
+            toast.error("Invalid email and password");
         }
     }
 
