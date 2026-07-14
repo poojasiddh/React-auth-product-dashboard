@@ -10,6 +10,7 @@ import Dashboard from './Pages/Dashboard'
 import ProtectedRoute from './Component/ProtectedRoute'
 import Cart from './Pages/Cart';
 import View from './Pages/View';
+import Addproduct from './Pages/Addproduct';
 
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
         } />
         <Route path="/cart" element={<Cart />} />
         <Route path="/view/:id" element={<View />} />
+         <Route path="/add_product" element={<Addproduct />} />
       </Routes>
-
     </BrowserRouter>
   )
 }
